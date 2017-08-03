@@ -1,0 +1,14 @@
+### Executable files
+*.exe
+*.out
+
+
+### Object files
+*.o
+*.so
+*.a
+
+### Swap files
+*.swp
+*.dwo
+*.*~
