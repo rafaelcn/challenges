@@ -14,7 +14,7 @@ int main() {
         cin >> to_sort[i];
     }
 
-    // Sort using the lexographical order of the string.
+    // Sort using the lexicographical order of the string.
     // Converting from/to a unsigned long long number isn't feasible due
     // to the problem constraint.
     sort(to_sort.begin(), to_sort.end(), [](const string a, const string b) {
