@@ -1,0 +1,4 @@
+* 10 days of statistics
+
+  The goal of this tutorial is to walk through some concepts of statistics and
+they can be found (here)[https://www.hackerrank.com/domains/tutorials/10-days-of-statistics]
