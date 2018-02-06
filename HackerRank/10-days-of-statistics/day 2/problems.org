@@ -1,0 +1,159 @@
+#+STARTUP: noalign
+#+OPTIONS: todo:nil tasks:("DONE" "IN-PROGRESS") tags:nil
+
+#+TITLE: Problems of the day 2
+#+AUTHOR: Rafael Campos Nunes
+#+DATE: 01/02/2018
+
+#+LANGUAGE: en-us
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+* DONE Toss of dices
+  CLOSED: [2018-02-06 Ter 01:12]
+
+  The first problem asks for the probability of a single toss of two six-faced
+dices which the sum is at most 9.
+  We could solve it by enumerating all the cases that a single toss of two
+six-faced dices have the sum of at most 9, but that is a lot of cases, much
+more than the cases where the sum is greater than 9. Have said that we could
+use the axioms of probability to help us.
+
+$$ p(E) = p $$
+$$ p(\neg E) = 1 - p $$
+
+
+  Using the above formula and enumerating the cases which the toss is greater
+than nine we can solve it easily.
+
+| Toss | Die 1 | Die 2 |
+|------+-------+-------|
+|  <c> |   <c> |   <c> |
+|    1 |     4 |     6 |
+|    2 |     5 |     6 |
+|    3 |     6 |     6 |
+|    4 |     5 |     5 |
+|    5 |     6 |     5 |
+|    6 |     6 |     4 |
+
+  As we can see we have 6 tosses that the sum is greater than nine, therefore
+there are 30 cases in which the sum is not greater than nine. If you are
+wondering why, think of the number of possible cases there are.
+  Calling our probability, of having a single toss which the sum of the faces
+of the dices are not greater than nine, *e* we can solve:
+
+$$ p(e) = \frac{30}{36} $$
+
+  Hence, the probability of a single toss of two six-faced dices whose the sum
+of the two up-faced numbers are not greater than nine is
+
+$$ p(e) = \frac{5}{6} $$
+
+* DONE More toss of dices
+  CLOSED: [2018-02-06 Ter 01:12]
+
+  The second problem wants the probability of a single toss of two dices whose
+the sum of the up-faces are 6 and have different faces.
+  Using almost the same strategy as the earlier question we can enumerate all
+the cases of the question:
+
+| Toss | Die 1 | Die 2 |
+|------+-------+-------|
+| <c>  | <c>   | <c>   |
+| 1    | 2     | 4     |
+| 2    | 4     | 2     |
+| 3    | 5     | 1     |
+| 4    | 1     | 5     |
+
+  As we have four cases we can calculate the probability directly
+
+
+$$ p(e) = \frac{4}{36} = \frac{1}{9} $$
+
+
+* DONE Balls and urns
+  CLOSED: [2018-02-06 Ter 01:13]
+
+  The third problem is a little bit more complicated as it is compound
+probability. The problem is described as follows:
+
+#+BEGIN_QUOTE
+There are urns labeled X, Y, and Z.
+
+1. Urn 1 contains 4 red balls and 3 black balls.
+2. Urn 2 contains 5 red balls and 4 black balls.
+3. Urn 3 contains 4 red balls and 4 black balls.
+
+One ball is drawn from each of the 3 urns. What is the probability that, of the
+3 balls drawn, 2 are red and 1 is black?
+#+END_QUOTE
+
+  To solve this problem I adopted one strategy. Calculate each individual
+probability of each drawn ball for each urn.
+  I call \(E\) the event of drawing a black ball from the urn and \(\neg E\) the
+event of not drawing a red ball from the urn, that means, a red ball.
+Calculating every possibility:
+
+
+$$ P_x(E) = \frac{3}{7} \; \; P_x(\neg E) = \frac{4}{7} $$
+$$ P_y(E) = \frac{4}{9} \; \; P_y(\neg E) = \frac{5}{9} $$
+$$ P_z(E) = \frac{1}{2} \; \; P_z(\neg E) = \frac{1}{2} $$
+
+
+  To calculate the final probability we have first to know how many
+possibilities of drawing 2 balls red and 1 black. We can use combinations
+for this purpose as the order of  drawing the balls doesn't matter:
+
+$$ {C}_1^3 = \frac{3!}{1!*(3-1)!} = 3 $$
+
+  Knowing that are 3 total possibilities we can calculate the final
+probability with the following formula.
+
+#+BEGIN_equation
+#+BEGIN_ALIGN
+\small $$ P(e) = P_1(R \cap R \cap B) + P_2(R \cap B \cap R) + P_3(B \cap R \cap R) $$
+#+END_ALIGN
+#+END_equation
+
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P_1(R \cap R \cap B) = \frac{4}{7} * \frac{5}{9} * \frac{1}{2} $$
+#+END_align
+#+END_equation
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P_2(R \cap B \cap R) = \frac{4}{7} * \frac{4}{9} * \frac{1}{2} $$
+#+END_align
+#+END_equation
+
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P_2(B \cap R \cap R) = \frac{3}{7} * \frac{5}{9} * \frac{1}{2} $$
+#+END_align
+#+END_equation
+
+  Sum everything up:
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P(e) = P_1 + P_2 + P_3$$
+#+END_ALIGN
+#+END_equation
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P(e) = \frac{20}{63*2} + \frac{8}{63} + \frac{15}{63*2} $$
+#+END_align
+#+END_equation
+
+#+BEGIN_equation
+#+BEGIN_align
+$$ P(e) = \frac{51}{126} = \frac{17}{42} $$
+#+END_align
+#+END_equation
+
+  Hence, the probability of drawing two red and one black ball of the urns
+is \(\frac{17}{52}\).
