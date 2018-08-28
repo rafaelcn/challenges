@@ -4,16 +4,14 @@
 #define PI 3.14159
 
 int main() {
-	
-	using namespace std;
 
-	double area, r;
+    using namespace std;
 
-	scanf("%lf", &r);
+    double area, r;
+    scanf("%lf", &r);
 
-	area = PI*r*r;
+    area = PI*r*r;
+    printf("A=%.4lf\n", area);
 
-	printf("A=%.4lf", area);
-
-	return 0;
+    return 0;
 }
