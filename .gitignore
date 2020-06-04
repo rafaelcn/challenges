@@ -12,3 +12,7 @@
 *.swp
 *.dwo
 *.*~
+
+
+### VSCode files
+.vscode
