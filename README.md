@@ -1,3 +1,8 @@
-# problem-set
+# Challenges
 
-Set of problems from different sources solved in some languages I do like :smile: 
+This repository contains solved problems for some code challenges websites such
+as hackerrank, uri and codeforces.
+
+## Contribution
+
+Feel free to.
