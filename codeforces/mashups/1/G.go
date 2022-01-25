@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	var x, y, t int
+	var x, y, t int64
 
 	fmt.Scanf("%d\n", &t)
 
@@ -19,23 +19,27 @@ func main() {
 		computed := x - y
 
 		if computed <= 1 {
-			fmt.Print("NO")
-			return
-		}
-
-		for i := 2; i < x/2; i++ {
-			if isPrime(i) {
-				if computed%i == 0 {
-					found = true
-					break
-				}
-			}
-		}
-
-		if found {
+			fmt.Println("NO")
+		} else if computed%2 == 0 {
 			fmt.Println("YES")
 		} else {
-			fmt.Println("NO")
+			// odd cases
+			var i int64
+
+			for i = 2; i < x/2; i++ {
+				if isPrime(i) {
+					if computed%i == 0 {
+						found = true
+						break
+					}
+				}
+			}
+
+			if found {
+				fmt.Println("YES")
+			} else {
+				fmt.Println("NO")
+			}
 		}
 
 		t--
@@ -43,7 +47,7 @@ func main() {
 
 }
 
-func isPrime(n int) bool {
+func isPrime(n int64) bool {
 
 	if n <= 1 {
 		return false
@@ -53,7 +57,9 @@ func isPrime(n int) bool {
 		return false
 	}
 
-	for i := 3; i*i <= n; i += 2 {
+	var i int64
+
+	for i = 3; i*i <= n; i += 2 {
 		if n%i == 0 {
 			return false
 		}

@@ -10,6 +10,7 @@ func main() {
 
 	fmt.Scanf("%d %d\n", &n, &m)
 
+	// O(n)
 	for n > 0 {
 		days++
 

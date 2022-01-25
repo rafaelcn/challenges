@@ -19,8 +19,8 @@ func main() {
 	// o preço em promoção então isso é uma enganação.
 
 	if r*m > p {
-		fmt.Printf("Promocao")
+		fmt.Print("Promocao")
 	} else {
-		fmt.Printf("Enganacao")
+		fmt.Print("Enganacao")
 	}
 }
