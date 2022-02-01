@@ -15,7 +15,6 @@ func main() {
 	fmt.Scanf("%s\n", &input)
 
 	for i := 0; i <= len(input) || output == input; {
-
 		for j, strange := range strangers {
 			if i+len(strange) <= len(input) {
 				if input[i:i+len(strange)] == strange {
@@ -35,12 +34,11 @@ func main() {
 			}
 		}
 	}
-	
+
 end:
 	if output == input {
 		fmt.Print("YES")
-		return
+	} else {
+		fmt.Print("NO")
 	}
-
-	fmt.Print("NO")
 }

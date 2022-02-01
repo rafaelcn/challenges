@@ -20,10 +20,9 @@ func main() {
 
 		if computed <= 1 {
 			fmt.Println("NO")
-		} else if computed%2 == 0 {
+		} else if computed%2 == 0 || isPrime(computed) {
 			fmt.Println("YES")
 		} else {
-			// odd cases
 			var i int64
 
 			for i = 2; i < x/2; i++ {
