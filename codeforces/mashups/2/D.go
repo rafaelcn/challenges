@@ -7,6 +7,8 @@ import (
 	"sort"
 )
 
+// D. Resultado da corrida
+
 func main() {
 
 	var n int
@@ -51,19 +53,6 @@ func main() {
 	for i := 1; i <= len(r); i++ {
 		printf("%d ", r[i])
 	}
-
-	/*index := 1
-
-	// O(n^2)
-	for i := 0; i < len(t); i++ {
-		for j := 0; i < len(t); j++ {
-			if t[j].PositionInserted == index {
-				printf("%d ", t[j].Rank)
-				index++
-				break
-			}
-		}
-	}*/
 
 	writer.Flush()
 }

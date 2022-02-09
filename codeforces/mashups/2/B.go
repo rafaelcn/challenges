@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// B. Jovem Físico
+
 func main() {
 
 	var n int

@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// A. Pedras na mesa
+
 func main() {
 
 	var n int

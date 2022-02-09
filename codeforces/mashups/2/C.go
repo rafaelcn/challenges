@@ -7,9 +7,7 @@ import (
 	"os"
 )
 
-func solve() {
-
-}
+// C. Deivis e a maior diferença
 
 func main() {
 
