@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// A. XORwise
+
 func solve() {
 
 	var a, b int
