@@ -7,21 +7,26 @@ import (
 	"sort"
 )
 
+type ll int64
+type lla []ll
+
 func main() {
 
-	var n, i int
+	var n, i int64
 
 	scanf("%d\n", &n)
 
-	x, y := 0, 0
-	a := make([]int, n)
+	var x, y ll
+
+	x, y = 0, 0
+	a := make(lla, n)
 
 	for i < n {
 		scanf("%d", &a[i])
 		i++
 	}
 
-	sort.Ints(a)
+	sort.Sort(a)
 	i = 0
 
 	for i < n {
@@ -53,3 +58,9 @@ func scanf(f string, a ...interface{}) {
 func printf(f string, a ...interface{}) {
 	fmt.Fprintf(writer, f, a...)
 }
+
+//
+
+func (a lla) Len() int           { return len(a) }
+func (a lla) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a lla) Less(i, j int) bool { return a[i] < a[j] }
