@@ -44,25 +44,18 @@ signed main() {
 
     sort(all(a));
 
-    int d, i, j;
+    int j = 1;
+    int d = 0;
 
-    i = 0;
-    j = 1;
-    d = 0;
+    for (int i = 0; i < n; i++) {
 
-    do {
-		if (j > a[i]) {
-            a.erase(a.begin() + i);
-		} else {
-			a.erase(a.begin() + i);
-
-			i = 0;
-			j++;
-			d++;
-		}
-
-        i++;
-	} while (i < a.size());
+        if (j > a[i]) {
+            continue;
+        } else {
+            j++;
+            d++;
+        }
+    }
 
     out(d);
 }
