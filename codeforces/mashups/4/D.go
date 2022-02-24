@@ -27,7 +27,6 @@ func main() {
 
 		if ai > 0 {
 			// rotate elements (I could walk as well, something as a[i%len(a)])
-
 			ai = ai % len(a)
 
 			left := a[:ai]

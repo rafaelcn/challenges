@@ -44,7 +44,6 @@ func main() {
 			ts = append(ts, capacity)
 			ts[len(ts)-1] -= c
 		}
-
 	}
 
 	println(len(ts))
