@@ -34,20 +34,7 @@ func main() {
 
 			a = append([]int{}, rigth...)
 			a = append(a, left...)
-
-			//println(a)
 		} else if ai == -1 {
-			// remove ai elements of the queue
-			/*j := 0
-
-			for j < -ai {
-				if len(a) > 0 {
-					a = a[1:]
-				}
-				j++
-				println(a)
-			}*/
-
 			// remove element in front of the queue
 			a = a[1:]
 		}
