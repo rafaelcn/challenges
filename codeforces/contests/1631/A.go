@@ -5,6 +5,8 @@ import (
 	"sort"
 )
 
+// A.
+
 func main() {
 
 	var t, n int
