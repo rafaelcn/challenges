@@ -15,11 +15,11 @@ int main() {
     int heard_values[n];
 
     for (int i = 0; i < k; i++) {
-	cin >> judge_values[i];
+	    cin >> judge_values[i];
     }
 
     for (int i = 0; i < n; i++) {
-	cin >> heard_values[i];
+	    cin >> heard_values[i];
     }
 
     // set used to test intersection
@@ -37,8 +37,8 @@ int main() {
             ls = ls + judge_values[j];
             ll value = heard_values[i] - ls;
 
+            // O(logn)
             if (i == 0) {
-		// O(logn)
                 intersection.insert(value);
             } else {
                 intersection1.insert(value);
@@ -47,7 +47,7 @@ int main() {
 
         if (n == 1) {
             for (const auto &e : intersection) {
-            result.push_back(e);
+                result.push_back(e);
             }
         } else {
             if (i != 0) {
