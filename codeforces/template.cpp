@@ -33,7 +33,7 @@ void solve() {
 
 }
 
-uint32_t main() {
+int32_t main() {
 
     ll t; in(t);
 
