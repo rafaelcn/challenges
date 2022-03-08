@@ -10,8 +10,8 @@ import (
 // A. Deivis e as consultas de soma 1
 
 var (
-	a [N+2]int
-	p [N+2]int64
+	a [N + 2]int64
+	p [N + 2]int64
 )
 
 func main() {
@@ -26,9 +26,9 @@ func main() {
 	scanf("\n")
 
 	// build prefix sum vector
-	p[0] = int64(a[0])
+	p[0] = a[0]
 	for i := 1; i < n; i++ {
-		p[i] = int64(a[i]) + p[i-1]
+		p[i] = a[i] + p[i-1]
 	}
 
 	//println(a[:n])
