@@ -30,6 +30,8 @@ func main() {
 // Constants
 
 const (
+	N = 1e5
+	M = 1e6
 	B = 1e9
 	BB = 1e18
 )
