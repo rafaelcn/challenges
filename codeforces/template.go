@@ -46,6 +46,78 @@ func (p Pairs) Len() int           { return len(p) }
 func (p Pairs) Less(i, j int) bool { return p[i].First < p[j].First }
 func (p Pairs) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
 
+type PriorityQueue struct {
+	v    []int
+	Size int
+}
+
+func (pq *PriorityQueue) build(a []int) {
+
+	pq.v = a
+	pq.Size += len(a)
+
+	pq.heap()
+}
+
+func (pq *PriorityQueue) heap() {
+
+	// builds a max heap
+
+	n := pq.Size
+	r := (n / 2) - 1
+
+	for i := r; i >= 0; i-- {
+		pq.heapify(i)
+	}
+
+}
+
+func (pq *PriorityQueue) heapify(index int) {
+
+	root := index
+	lc := 2*index + 1
+	rc := 2*index + 2
+
+	if lc < pq.Size && pq.v[lc] > pq.v[root] {
+		root = lc
+	}
+	if rc < pq.Size && pq.v[rc] > pq.v[root] {
+		root = rc
+	}
+
+	if root != index {
+		pq.v[index], pq.v[root] = pq.v[root], pq.v[index]
+		pq.heapify(root)
+	}
+}
+
+func (pq *PriorityQueue) add(n int) {
+
+	pq.v = append(pq.v, n)
+	pq.Size++
+
+	pq.heapify(0)
+}
+
+func (pq *PriorityQueue) front() int {
+
+	if pq.Size > 0 {
+		// store the first element
+		n := pq.v[0]
+		// remove element
+		pq.v = pq.v[1:]
+		pq.Size--
+
+		return n
+	}
+
+	return -1
+}
+
+func (pq *PriorityQueue) empty() bool {
+	return pq.Size == 0
+}
+
 // Util functions
 
 func tos(n int) string {
