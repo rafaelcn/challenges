@@ -34,8 +34,7 @@ func main() {
 		q--
 	}
 
-	var v int64
-	v = 0
+	var v int64 = 0
 
 	for i := 0; i <= n; i++ {
 		v += d[i]
@@ -49,7 +48,7 @@ func main() {
 			c++
 		}
 	}
-	
+
 	println(c)
 
 	writer.Flush()
