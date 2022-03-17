@@ -25,6 +25,7 @@ template <typename F, typename S> ostream &operator<<(ostream &os, pair<F, S> v)
 template <typename... A> void in(A &...a) { ((cin >> a), ...); }
 template <typename... A> void out(A... a) { ((cout << a << " "), ...); cout << endl; }
 template <typename... A> void print(A... a) { ((cout << a), ...); }
+
 vector<string> split(string& s, string delimiter);
 string join(vector<string>& s, string delimiter);
 
