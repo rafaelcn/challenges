@@ -33,7 +33,6 @@ const (
 	N = 1e5
 	M = 1e6
 	B = 1e9
-	BB = 1e18
 )
 
 // Data structures
@@ -47,6 +46,34 @@ type Pairs []Pair
 func (p Pairs) Len() int           { return len(p) }
 func (p Pairs) Less(i, j int) bool { return p[i].First < p[j].First }
 func (p Pairs) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
+type Queue struct {
+	v    []int
+	Size uint
+}
+
+func (q *Queue) enqueue(n int) {
+
+	q.v = append(q.v, n)
+	q.Size++
+}
+
+func (q *Queue) front() int {
+
+	return q.v[0]
+}
+
+func (q *Queue) pop() {
+
+	if len(q.v) > 0 {
+		q.v = q.v[1:]
+		q.Size--
+	}
+}
+
+func (q *Queue) size() uint {
+	return q.Size
+}
 
 type PriorityQueue struct {
 	v    []int
@@ -173,8 +200,8 @@ func bin(dec uint) []uint {
 	}
 
 	for i, j := 0, len(bin)-1; i < j; i, j = i+1, j-1 {
-        bin[i], bin[j] = bin[j], bin[i]
-    }
+		bin[i], bin[j] = bin[j], bin[i]
+	}
 
 	return bin
 }
