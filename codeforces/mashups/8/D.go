@@ -10,7 +10,6 @@ import (
 type Tuple struct {
 	Number    int
 	Index     int
-	IndexShot int
 }
 
 type Tuples []Tuple
@@ -35,7 +34,6 @@ func main() {
 
 	for i, v := range tuples {
 		shots += i*v.Number + 1
-		tuples[i].IndexShot = i+1
 	}
 
 	fmt.Println(shots)
