@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// D.
+// D. Olímpiada
 
 type Tuple struct {
 	Number    int
