@@ -7,6 +7,8 @@ import (
 	"sort"
 )
 
+// C. Jogo dos Cubos
+
 var (
 	r = bufio.NewReader(os.Stdin)
 	w = bufio.NewWriter(os.Stdout)
