@@ -36,7 +36,7 @@ func main() {
 	ansX, ansY := 0, math.MaxInt32
 
 	left := 0
-	right := n-1
+	right := n - 1
 
 	for left < right {
 		x := a[left]
@@ -44,7 +44,7 @@ func main() {
 
 		if x+y > money {
 			right--
-		} else if x+y == money{
+		} else if x+y == money {
 			ansX, ansY = x, y
 			left++
 			right--
