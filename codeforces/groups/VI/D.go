@@ -51,7 +51,6 @@ func main() {
 		} else {
 			left++
 		}
-
 	}
 
 	O("%d %d\n", ansX, ansY)
