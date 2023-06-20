@@ -17,7 +17,7 @@ func main() {
 
 	var t int
 
-	R("%d\n", &t)
+	I("%d\n", &t)
 
 	for t > 0 {
 		solve()
@@ -225,14 +225,14 @@ var (
 	reader = bufio.NewReader(os.Stdin)
 )
 
-func R(f string, a ...interface{}) {
+func I(f string, a ...interface{}) {
 	fmt.Fscanf(reader, f, a...)
 }
 
-func P(f string, a ...interface{}) {
+func O(f string, a ...interface{}) {
 	fmt.Fprintf(writer, f, a...)
 }
 
-func PL(f ...interface{}) {
+func OL(f ...interface{}) {
 	fmt.Fprintln(writer, f...)
 }
