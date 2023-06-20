@@ -1,0 +1,15 @@
+#+TITLE: Problems of the 3 day
+#+AUTHOR: Rafael Campos Nunes
+#+DATE:
+
+#+LANGUAGE: en-us
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+* Cards of the Same Suit
+
+Hence, the answer is  $\frac{12}{51}$.
+
+* Drawing Marbles
+
+Therefore, the answer is $\frac{2}{3}$.
