@@ -225,14 +225,14 @@ var (
 	reader = bufio.NewReader(os.Stdin)
 )
 
-func scanf(f string, a ...interface{}) {
+func R(f string, a ...interface{}) {
 	fmt.Fscanf(reader, f, a...)
 }
 
-func printf(f string, a ...interface{}) {
+func P(f string, a ...interface{}) {
 	fmt.Fprintf(writer, f, a...)
 }
 
-func println(f ...interface{}) {
+func PL(f ...interface{}) {
 	fmt.Fprintln(writer, f...)
 }
