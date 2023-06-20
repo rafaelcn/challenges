@@ -17,7 +17,7 @@ func main() {
 
 	var t int
 
-	scanf("%d\n", &t)
+	R("%d\n", &t)
 
 	for t > 0 {
 		solve()
