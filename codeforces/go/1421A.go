@@ -9,16 +9,14 @@ import (
 // A. XORwise
 
 func solve() {
-
 	var a, b int
 
 	scanf("%d %d\n", &a, &b)
 
-	println(a^b)
+	println(a ^ b)
 }
 
 func main() {
-
 	var t int
 
 	scanf("%d\n", &t)

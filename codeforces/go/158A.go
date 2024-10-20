@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-
 	n, k := 0, 0
 
 	fmt.Scanf("%d %d\n", &n, &k)

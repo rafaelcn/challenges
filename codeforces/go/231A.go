@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-
 	var solutions int
 	var results []int
 
@@ -27,7 +26,7 @@ func main() {
 		// 1 1 0 | 0 1 0 | 1 0 1
 		// 0+3   | 3+6   | 6+3
 
-		segment := results[i:i+3]
+		segment := results[i : i+3]
 
 		for _, v := range segment {
 			if v > 0 {

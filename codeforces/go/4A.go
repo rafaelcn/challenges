@@ -5,7 +5,6 @@ import (
 )
 
 func main() {
-
 	var w int
 
 	fmt.Scanf("%d", &w)
