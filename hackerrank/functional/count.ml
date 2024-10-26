@@ -14,4 +14,4 @@ let () =
     with End_of_file -> l
   in
   let numbers = reader [] in
- Printf.printf "%d\n" (count numbers);;
+  Printf.printf "%d\n" (count numbers);;
