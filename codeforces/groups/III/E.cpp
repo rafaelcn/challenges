@@ -6,7 +6,6 @@ template<typename T>
 class cpq : public priority_queue<T, vector<T>>
 {
   public:
-
       bool remove(const T& value) {
         auto it = find(this->c.begin(), this->c.end(), value);
         if (it != this->c.end()) {
@@ -38,12 +37,12 @@ int32_t main() {
         cin >> c >> n;
 
         if (c == 'A') {
-            presents.push(n); 
+            presents.push(n);
             weights.push(n);
         } else if (c == 'R') {
             int t = presents.top();
             presents.pop();
-            
+
             weights.remove(t);
         } else if (c == 'V') {
             // show present
