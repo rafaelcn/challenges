@@ -21,7 +21,6 @@ func merge(a, b []int) []int {
     r := make([]int, as+bs)
 
     for ; i < as && j < bs; {
-
         if a[i] <= b[j] {
             r[k] = a[i]
             i++
