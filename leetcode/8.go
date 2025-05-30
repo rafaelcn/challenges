@@ -1,11 +1,12 @@
 func myAtoi(s string) int {
     
-    digits := []int{}
-    signal := 1
-    consumed := 0
+    digits := 0
     leading := true
+    
+    signal := int64(1)
+    number := int64(0)
 
-    lookup := map[byte]int{
+    lookup := map[byte]int64{
         '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
     }
 
@@ -21,41 +22,25 @@ func myAtoi(s string) int {
         i++
     }
 
-    // consume printable characters now
+    // consume printable characters now 
     for ; i < len(s); i++ {
-        //fmt.Println(string(s[i]), digits, "i", i, "consumed", consumed)
+        //fmt.Println(string(s[i]), "number", number)
 
-        if v, ok := lookup[s[i]]; ok && len(digits) <= 10 {
+        if v, ok := lookup[s[i]]; ok && digits <= 10 {
             if v == 0 && leading {
                 continue
             }
-            consumed++
+            digits++
             leading = false
-            digits = append(digits, v)
+
+            number = number * 10 + v
         } else {
             break
         }
     }
 
-    if len(digits) == 0 { return 0 }
-    
-    number := int64(0)
-    for i := 0; i < len(digits); i++ {
-        e := 1 
-        m := len(digits)-1-i
+    if signal*number > math.MaxInt32 { return math.MaxInt32 }
+    if signal*number < math.MinInt32 { return math.MinInt32 }
 
-        for m > 0 {
-            e *= 10
-            m--
-        }
-
-        number += int64(digits[i]*e)
-    }
-
-    number = number*int64(signal)
-
-    if number > math.MaxInt32 { number = math.MaxInt32 }
-    if number < math.MinInt32 { number = math.MinInt32 }
-
-    return int(number)
+    return int(number*signal)
 }
